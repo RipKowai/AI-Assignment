@@ -81,7 +81,7 @@ namespace Game
             base.Start();
             m_meshTransform = transform.Find("Mesh");
             m_iHP = MaxHP;
-            m_hpBar = HPBar.Create(this);            
+            m_hpBar = HPBar.Create(this);
         }
 
         public void Bounce()
@@ -108,6 +108,11 @@ namespace Game
             else
             {
                 DungeonCanvas.Instance.AddMessage("-" + iDMG + " HP", MessagePosition, Color.red);
+                /*if (controller is HeroController heroController)
+                {
+                    return new Action_MoveTowards(HeroController heroController, Heart.AllHearts);
+
+                }*/
             }
         }
 

@@ -10,9 +10,9 @@ using static UnityEngine.GraphicsBuffer;
 /// <summary>
 /// Replace the FirstName and LastName with your name and last name :)
 /// </summary>
-namespace FirstName_LastName
+namespace Georgi_Damyanov
 {
-    public class FirstName_LastName_Controller : HeroController
+    public class Georgi_Damynov_Controller : HeroController
     {
         public override ControllerAction Think()
         {

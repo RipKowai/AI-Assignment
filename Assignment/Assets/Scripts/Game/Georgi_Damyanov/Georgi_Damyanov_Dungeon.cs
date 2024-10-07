@@ -65,9 +65,18 @@ namespace Game
                         {
                             if (!closed.Contains(neighbor) && neighbor.Owner == null)
                             {
-                                float newDistance = current.m_fDistance + Vector3.Distance(current.WorldPosition, neighbor.WorldPosition) +      // Distance to node
-                                                    neighbor.AdditionalCost + link.AdditionalCost;                                               // additional costs
+                                float newDistance;
 
+                                if (link.Target is Node_Trap trap && controller is EnemyController enemyController)
+                                {
+                                    newDistance = current.m_fDistance + Vector3.Distance(current.WorldPosition, neighbor.WorldPosition);
+                                }
+                                else
+                                {
+                                    newDistance = current.m_fDistance + Vector3.Distance(current.WorldPosition, neighbor.WorldPosition) +      // Distance to node
+                                                    neighbor.AdditionalCost + link.AdditionalCost;                                               // additional costs
+                                }
+                                    
                                 if (closed.Contains(neighbor) ||
                                     open.Contains(neighbor))
                                 {
